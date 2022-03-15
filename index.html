@@ -7,15 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta name="theme-color" content="#">
-    <link rel="stylesheet" href="css/choices.min.css">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/simplebar.min.js"></script>
+  <link rel="stylesheet" href="css/choices.min.css">
+
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="js/swiper.js" defer></script>
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/simplebar.min.js"></script>
 </head>
   <body>
     <header class="header">
       <div class="header-top">
-        <div class="container header-wrapper">
+        <div class="container header__top-wrapper">
          
         <a href="#" class="header-logo">
           <picture>
@@ -23,7 +28,8 @@
             alt="Логотип Blanchard" class="logo"> 
           </picture>
         </a>
-
+    
+      <!-- menu-top -->
       <div class="header__menu">
         <nav  class="menu">
           <ul class="menu-list">
@@ -52,83 +58,118 @@
       </div>
     </div>
 
+
+    <!-- menu-bottom -->
     <div class="header-bottom">
         <div class="container header__bottom-wrapper">
-          <ul class="menu-list-descriptions">  
+          <ul class="header__bottom-list">  
               <li class="menu-item-descriptions">
-                <a class="dropdown__btn btn-artis" aria-label="открытия художников реализма">Реализм</a>
+                <a class="dropdown__btn btn-reset" aria-label="открытия художников реализма">Реализм</a>
+
+                <svg width="12" height="7" viewbox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11 1L6 6L1 1" stroke="white"/>
+                </svg>
+                  
                 <ul class="dropdown__list list-reset" data-simplebar>
-                  <li class="dropdown__item realizm-1">Тинторетто</li>
-                  <li class="dropdown__item realizm-2">Фридрих</li>
-                  <li class="dropdown__item realizm-3">Леонардо</li>
-                  <li class="dropdown__item realizm-4">Верроккьо</li>
+                  <li class="dropdown__item realizm_1">Тинторетто</li>
+                  <li class="dropdown__item realizm_2">Фридрих</li>
+                  <li class="dropdown__item realizm_3">Леонардо</li>
+                  <li class="dropdown__item realizm_4">Верроккьо</li>
                 </ul> 
               </li>
           
               <li class="menu-item-descriptions">
-                <a class="dropdown__btn btn-artist"
-              aria-label="открытия художников импрессионизма">Импрессионизм</a>
+                <a class="dropdown__btn btn-reset"
+                  aria-label="открытия художников импрессионизма">Импрессионизм</a>
+
+                  <svg width="12" height="7" viewbox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11 1L6 6L1 1" stroke="white"/>
+                  </svg>
+                    
               <ul class="dropdown__list list-reset" data-simplebar>
-                <li class="dropdown__item impressionism-1">Моне</li>
-                <li class="dropdown__item impressionism-2">Сислей</li>
-                <li class="dropdown__item impressionism-3">Мане</li>
-                <li class="dropdown__item impressionism-4">Ренуар</li>
+                <li class="dropdown__item impressionism_1">Моне</li>
+                <li class="dropdown__item impressionism_2">Сислей</li>
+                <li class="dropdown__item impressionism_3">Мане</li>
+                <li class="dropdown__item impressionism_4">Ренуар</li>
               </ul>
               </li>
            
               <li class="menu-item-descriptions">
-                <a class="dropdown__btn btn-artist"
-              aria-label="открытия художников постимпрессионизма">Постимпрессионизм</a>
+                <a class="dropdown__btn btn-reset"
+                  aria-label="открытия художников постимпрессионизма">Постимпрессионизм</a>
+
+                  <svg width="12" height="7" viewbox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11 1L6 6L1 1" stroke="white"/>
+                  </svg>
+                    
               <ul class="dropdown__list list-reset" data-simplebar>
-                <li class="dropdown__item postimpressionism-1">Ван Гог</li>
-                <li class="dropdown__item postimpressionism-2">Сезанн</li>
-                <li class="dropdown__item postimpressionism-3">Гоген</li>
+                <li class="dropdown__item postimpressionism_1">Ван Гог</li>
+                <li class="dropdown__item postimpressionism_2">Сезанн</li>
+                <li class="dropdown__item postimpressionism_3">Гоген</li>
               </ul>
               </li>
            
               <li class="menu-item-descriptions">
-                <a class="dropdown__btn btn-artist" aria-label="открытия художников авангарда">Авангард</a>
+                <a class="dropdown__btn btn-reset" aria-label="открытия художников авангарда">Авангард</a>
+
+                <svg width="12" height="7" viewbox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11 1L6 6L1 1" stroke="white"/>
+                </svg>
+                  
                 <ul class="dropdown__list list-reset" data-simplebar>
-                  <li class="dropdown__item vanguard-1">Кандинский</li>
-                  <li class="dropdown__item vanguard-2">Маринетти</li>
-                  <li class="dropdown__item vanguard-3">Малевич</li>
-                  <li class="dropdown__item vanguard-4">Пикассо</li>
+                  <li class="dropdown__item vanguard_1">Кандинский</li>
+                  <li class="dropdown__item vanguard_2">Маринетти</li>
+                  <li class="dropdown__item vanguard_3">Малевич</li>
+                  <li class="dropdown__item vanguard_4">Пикассо</li>
                 </ul>
               </li>
             
               <li class="menu-item-descriptions">
-                <a class="dropdown__btn btn-artist" aria-label="открытия художников футуризма">Футуризм</a>
+                <a class="dropdown__btn btn-reset" aria-label="открытия художников футуризма">Футуризм</a>
+
+                <svg width="12" height="7" viewbox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11 1L6 6L1 1" stroke="white"/>
+                </svg>
+                  
                 <ul class="dropdown__list list-reset" data-simplebar>
-                  <li class="dropdown__item futurism-1">Карра</li>
-                  <li class="dropdown__item futurism-2">Прателла</li>
-                  <li class="dropdown__item futurism-3">Северини</li>
-                  <li class="dropdown__item futurism-4">Балла</li>
+                  <li class="dropdown__item futurism_1">Карра</li>
+                  <li class="dropdown__item futurism_2">Прателла</li>
+                  <li class="dropdown__item futurism_3">Северини</li>
+                  <li class="dropdown__item futurism_4">Балла</li>
                 </ul>
               </li>
           </ul>
-       
-        <form class="header-search" action="#" method="get">
-          <label for="search" class="search-label">Поиск  по сайту</label>
-          <button class="search-submit" id="search" type="submit" aria-label="Поиск по сайту"></button>  
-        </form>
+       <!-- search-поиск -->
+       <form class="header__bottom-form" tabindex="0">
+        <button class="header__bottom-btn btn-reset" aria-label="поиска">
+          <svg class="header__bottom-icon" width="23" height="22" viewbox="0 0 23 22" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <rect width="6.8678" height="1.71695"
+              transform="matrix(-0.718931 0.695081 0.718931 0.695081 4.9375 15.6534)" fill="white" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M12.0969 18C7.53041 18 3.99692 14.3229 3.99692 10C3.99692 5.67715 7.53041 2 12.0969 2C16.6634 2 20.1969 5.67715 20.1969 10C20.1969 14.3229 16.6634 18 12.0969 18ZM12.0969 20C6.57408 20 2.09692 15.5228 2.09692 10C2.09692 4.47715 6.57408 0 12.0969 0C17.6198 0 22.0969 4.47715 22.0969 10C22.0969 15.5228 17.6198 20 12.0969 20Z"
+              fill="white" />
+          </svg>
+        </button>
+        <input type="search" class="header__bottom-input btn-reset" placeholder="Поиск по сайту">
+        <button class="header__bottom-close close btn-reset" aria-label="закрытия поиска" type="button">
+          
+        </button>
+      </form>
       </div>
     </div>
   </header>
 
     <main>
-      <section class="container first-section">
-        <div class="slider museums-section">
-            <ul class="slider__list">
-              <li class="slider__item">
-                <img src="img/museums_1.jpg" alt="museums_1">
-              </li>
-              <li class="slider__item">
-                <img src="img/museums_2.png" alt="museums_2">
-              </li>
-              <li class="slider__item">
-                <img src="img/museums_3.png" alt="museums_3">
-              </li>
-            </ul>
+      <!-- slider -->
+      <section class="art-gallery first-section">
+        <div class="art__swiper swiper-container">
+          <div class="hero__wrapper swiper-wrapper">
+            <div class="hero__slide hero__slide--1 swiper-slide"></div>
+            <div class="hero__slide hero__slide--2 swiper-slide"></div>
+            <div class="hero__slide hero__slide--3 swiper-slide"></div>
+          </div>
+        </div>
 
           <div class="paint-museums">
             <h2 class="museums-title">
@@ -141,9 +182,9 @@
             </p>
             <a class="subscriptions" href="#">Подписаться на рассылку</a>
           </div> 
-        </div>
       </section>
-
+    
+      <!-- sechtion- about Us -->
       <div class="container">
         <section class="three-section">
           <h2 class="title">
@@ -165,9 +206,12 @@
               среди определенных слоев населения, а значит, должны быть разоблачены.
             </p>          
         </section>
-      </div> 
+      </div>
+    
     </main>
     <script src="js/choices.min.js"></script> 
     <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/swiper.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
