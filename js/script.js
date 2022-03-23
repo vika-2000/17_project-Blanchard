@@ -1,21 +1,10 @@
-new Swiper('.slider', {
-  slidesPerView: 1,
-  breakpoints: {
-    768: {
-      slidesPerView: 1
-    },
-    1024: {
-      slidesPerView: 1,
-    }
-  }, 
+
+//slide
+let heroSlider = new Swiper('.art__swiper' , {
   loop: true,
-  wrapperClass: 'slider__list',
-  slideClass: 'slider__item',
-  pagination: {
-    el: '.slider__pagination',
-    type: 'bullets',
-    bulletClass: 'paginator__item',
-    bulletActiveClass: 'paginator__item--active',
-    clickable: true
-  }, 
-})
+  speed: 2000,
+  autoplay: {
+    delay: 4000,
+  },
+  effect: 'fade',
+});

@@ -7,15 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta name="theme-color" content="#">
+
+    <link
+  rel="stylesheet"
+  href="https://unpkg.com/simplebar@latest/dist/simplebar.css"/>
+
+  <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
   <link rel="stylesheet" href="css/choices.min.css">
 
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script src="js/swiper.js" defer></script>
-
+ 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/simplebar.min.js"></script>
+  
 </head>
   <body>
     <header class="header">
@@ -59,83 +64,101 @@
     </div>
 
 
-    <!-- menu-bottom -->
+    <!-- menu-bottom-->
     <div class="header-bottom">
         <div class="container header__bottom-wrapper">
-          <ul class="header__bottom-list">  
+          <ul class="header__bottom-list  list-reset">  
               <li class="menu-item-descriptions">
-                <a class="dropdown__btn btn-reset" aria-label="открытия художников реализма">Реализм</a>
+                <bottom class="dropdown__btn btn-reset" aria-label="открытия художников реализма">Реализм</bottom>
 
-                <svg width="12" height="7" viewbox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M11 1L6 6L1 1" stroke="white"/>
-                </svg>
-                  
                 <ul class="dropdown__list list-reset" data-simplebar>
-                  <li class="dropdown__item realizm_1">Тинторетто</li>
-                  <li class="dropdown__item realizm_2">Фридрих</li>
-                  <li class="dropdown__item realizm_3">Леонардо</li>
-                  <li class="dropdown__item realizm_4">Верроккьо</li>
+                  <li class="dropdown__item realizm_1">Тинторетто
+                    <a href="#" class="header__link">Галерея</a>
+                  </li>
+                  <li class="dropdown__item realizm_2">Фридрих
+                    <a href="#" class="header__link">Галерея</a>
+                  </li>
+                  <li class="dropdown__item realizm_3">Леонардо
+                    <a href="#" class="header__link">Галерея</a>
+                  </li>
+                  <li class="dropdown__item realizm_4">Верроккьо
+                    <a href="#" class="header__link">Галерея</a>
+                  </li>
                 </ul> 
               </li>
           
               <li class="menu-item-descriptions">
-                <a class="dropdown__btn btn-reset"
-                  aria-label="открытия художников импрессионизма">Импрессионизм</a>
-
-                  <svg width="12" height="7" viewbox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11 1L6 6L1 1" stroke="white"/>
-                  </svg>
+                <bottom class="dropdown__btn btn-reset"
+                  aria-label="открытия художников импрессионизма">Импрессионизм</bottom>
                     
               <ul class="dropdown__list list-reset" data-simplebar>
-                <li class="dropdown__item impressionism_1">Моне</li>
-                <li class="dropdown__item impressionism_2">Сислей</li>
-                <li class="dropdown__item impressionism_3">Мане</li>
-                <li class="dropdown__item impressionism_4">Ренуар</li>
+                <li class="dropdown__item impressionism_1">Моне
+                  <a href="#" class="header__link">Галерея</a>
+                </li>
+                <li class="dropdown__item impressionism_2">Сислей
+                  <a href="#" class="header__link">Галерея</a>
+                </li>
+                <li class="dropdown__item impressionism_3">Мане
+                  <a href="#" class="header__link">Галерея</a>
+                </li>
+                <li class="dropdown__item impressionism_4">Ренуар
+                  <a href="#" class="header__link">Галерея</a>
+                </li>
               </ul>
               </li>
            
               <li class="menu-item-descriptions">
-                <a class="dropdown__btn btn-reset"
-                  aria-label="открытия художников постимпрессионизма">Постимпрессионизм</a>
-
-                  <svg width="12" height="7" viewbox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11 1L6 6L1 1" stroke="white"/>
-                  </svg>
+                <bottom class="dropdown__btn btn-reset"
+                  aria-label="открытия художников постимпрессионизма">Постимпрессионизм</bottom>
                     
               <ul class="dropdown__list list-reset" data-simplebar>
-                <li class="dropdown__item postimpressionism_1">Ван Гог</li>
-                <li class="dropdown__item postimpressionism_2">Сезанн</li>
-                <li class="dropdown__item postimpressionism_3">Гоген</li>
+                <li class="dropdown__item postimpressionism_1">Ван Гог
+                  <a href="#" class="header__link">Галерея</a>
+                </li>
+                <li class="dropdown__item postimpressionism_2">Сезанн
+                  <a href="#" class="header__link">Галерея</a>
+                </li>
+                <li class="dropdown__item postimpressionism_3">Гоген
+                  <a href="#" class="header__link">Галерея</a>
+                </li>
               </ul>
               </li>
            
               <li class="menu-item-descriptions">
-                <a class="dropdown__btn btn-reset" aria-label="открытия художников авангарда">Авангард</a>
-
-                <svg width="12" height="7" viewbox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M11 1L6 6L1 1" stroke="white"/>
-                </svg>
+                <bottom class="dropdown__btn btn-reset" aria-label="открытия художников авангарда">Авангард</bottom>
                   
                 <ul class="dropdown__list list-reset" data-simplebar>
-                  <li class="dropdown__item vanguard_1">Кандинский</li>
-                  <li class="dropdown__item vanguard_2">Маринетти</li>
-                  <li class="dropdown__item vanguard_3">Малевич</li>
-                  <li class="dropdown__item vanguard_4">Пикассо</li>
+                  <li class="dropdown__item vanguard_1">Кандинский
+                    <a href="#" class="header__link">Галерея</a>
+                  </li>
+                  <li class="dropdown__item vanguard_2">Маринетти
+                    <a href="#" class="header__link">Галерея</a>
+                  </li>
+                  <li class="dropdown__item vanguard_3">Малевич
+                    <a href="#" class="header__link">Галерея</a>
+                  </li>
+                  <li class="dropdown__item vanguard_4">Пикассо
+                    <a href="#" class="header__link">Галерея</a>
+                  </li>
                 </ul>
               </li>
             
               <li class="menu-item-descriptions">
-                <a class="dropdown__btn btn-reset" aria-label="открытия художников футуризма">Футуризм</a>
-
-                <svg width="12" height="7" viewbox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M11 1L6 6L1 1" stroke="white"/>
-                </svg>
+                <bottom class="dropdown__btn btn-reset" aria-label="открытия художников футуризма">Футуризм</bottom>  
                   
                 <ul class="dropdown__list list-reset" data-simplebar>
-                  <li class="dropdown__item futurism_1">Карра</li>
-                  <li class="dropdown__item futurism_2">Прателла</li>
-                  <li class="dropdown__item futurism_3">Северини</li>
-                  <li class="dropdown__item futurism_4">Балла</li>
+                  <li class="dropdown__item futurism_1">Карра
+                    <a href="#" class="header__link">Галерея</a>
+                  </li>
+                  <li class="dropdown__item futurism_2">Прателла
+                    <a href="#" class="header__link">Галерея</a>
+                  </li>
+                  <li class="dropdown__item futurism_3">Северини
+                    <a href="#" class="header__link">Галерея</a>
+                  </li>
+                  <li class="dropdown__item futurism_4">Балла
+                    <a href="#" class="header__link">Галерея</a>
+                  </li>
                 </ul>
               </li>
           </ul>
@@ -152,8 +175,7 @@
           </svg>
         </button>
         <input type="search" class="header__bottom-input btn-reset" placeholder="Поиск по сайту">
-        <button class="header__bottom-close close btn-reset" aria-label="закрытия поиска" type="button">
-          
+        <button class="header__bottom-close close btn-reset" aria-label="закрытия поиска" type="button">         
         </button>
       </form>
       </div>
@@ -173,7 +195,7 @@
 
           <div class="paint-museums">
             <h2 class="museums-title">
-              Прикоснитесь <br>к прекрасному
+              Прикоснитесь к прекрасному
             </h2>
             <p class="text">
               Мы вынуждены отталкиваться от того, 
@@ -181,6 +203,7 @@
               создаёт предпосылки для новых предложений.
             </p>
             <a class="subscriptions" href="#">Подписаться на рассылку</a>
+
           </div> 
       </section>
     
@@ -209,9 +232,12 @@
       </div>
     
     </main>
-    <script src="js/choices.min.js"></script> 
-    <script src="js/swiper-bundle.min.js"></script>
-    <script src="js/swiper.js"></script>
+    <script src="js/choices.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
+    integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+    <script src="js/simplebar.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

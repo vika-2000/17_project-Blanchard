@@ -192,12 +192,13 @@ button {
 
 .art__swiper {
   position: absolute;
-  top: -73px;
+  top: -74px;
   right: 0;
   bottom: 0;
   left: 0;
   width: 100%;
   z-index: -1;
+  overflow: hidden;
 }
 
 /* 1 блок main*/
@@ -212,21 +213,22 @@ button {
   background-color: #66737a;
   background-size: cover;
   background-position: center;
+  pointer-events: none;
 }
 
 .paint-museums {
-  max-width: 800px;
-  padding-top: 133px;
-  padding-bottom: 92px;
+  padding-top: 63px;
+  padding-bottom: 122px;
   padding-left: 160px;
 }
 
 .museums-title {
+  max-width: 597px;
   position: relative;
   font-weight: 700;
   font-style: normal;
   font-size: 72px;
-  line-height: 82px;
+  line-height: 98px;
   color: #fff;
   margin-bottom: 1px;
 }
@@ -285,6 +287,7 @@ a.subscriptions:active {
   margin-bottom: 0px;
 }
 
+/*кнопка*/
 .dropdown__btn {
   position: relative;
   font-size: 18px;
@@ -317,6 +320,14 @@ a.subscriptions:active {
   margin-right: 97px;
 }
 
+.dropdown__btn {
+  position: relative;
+  padding-right: 14px;
+  font-size: 18px;
+  color: #fff;
+  transition: color .3s ease-in-out, background-color .3s ease-in-out;
+}
+
 .dropdown__btn:hover {
   color: var(--main-color);
 }
@@ -329,28 +340,6 @@ a.subscriptions:active {
   background-color: var(--main-color);
   color: #fff;
 }
-
-.dropdown__btn::before {
-  right: 5px;
-  transform: rotate(45deg);
-}
-
-.open.dropdown__btn::before,
-.dropdown__btn:active::before {
-  transform: rotate(-45deg);
-}
-
-.dropdown__btn::after {
-  right: 0;
-  transform: rotate(45deg);
-}
-
-.open.dropdown__btn::after,
-.dropdown__btn:active::after {
-  transform: rotate(-45deg);
-}
-
-
 
 .dropdown__item {
   width: 100%;
@@ -376,94 +365,117 @@ a.subscriptions:active {
 }
 
 .realizm_1 {
-  background-image: url('../img/realism-1.jpg');
+  background-image: url('../img/realism_1.jpg');
 }
 
 .realizm_2 {
-  background-image: url('../img/realism-2.jpg');
+  background-image: url('../img/realism_2.jpg');
 }
 
 .realizm_3 {
-  background-image: url('../img/realism-3.jpg');
+  background-image: url('../img/realism_3.jpg');
 }
 
 .realizm_4 {
-  background-image: url('../img/realism-4.jpg');
+  background-image: url('../img/realism_4.jpg');
 }
 
 .impressionism_1 {
-  background-image: url('../img/impressionism-1.jpg');
+  background-image: url('../img/impressionism_1.jpg');
 }
 
 .impressionism_2 {
-  background-image: url('../img/impressionism-2.jpg');
+  background-image: url('../img/impressionism_2.jpg');
 }
 
 .impressionism_3 {
-  background-image: url('../img/impressionism-3.jpg');
+  background-image: url('../img/impressionism_3.jpg');
 }
 
 .impressionism_4 {
-  background-image: url('../img/impressionism-4.jpg');
+  background-image: url('../img/impressionism_4.jpg');
 }
 
 .postimpressionism_1 {
-  background-image: url('../img/postimpressionism-1.jpg');
+  background-image: url('../img/postimpressionism_1.jpg');
 }
 
 .postimpressionism_2 {
-  background-image: url('../img/postimpressionism-2.jpg');
+  background-image: url('../img/postimpressionism_2.jpg');
 }
 
 .postimpressionism_3 {
-  background-image: url('../img/postimpressionism-3.jpg');
+  background-image: url('../img/postimpressionism_3.jpg');
 }
 
 .postimpressionism_4 {
-  background-image: url('../img/postimpressionism-4.jpg');
+  background-image: url('../img/postimpressionism_4.jpg');
 }
 
 .vanguard_1 {
-  background-image: url('../img/vanguard-1.jpg');
+  background-image: url('../img/vanguard_1.jpg');
 }
 
 .vanguard_2 {
-  background-image: url('../img/vanguard-2.jpg');
+  background-image: url('../img/vanguard_2.jpg');
 }
 
 .vanguard_3 {
-  background-image: url('../img/vanguard-3.jpg');
+  background-image: url('../img/vanguard_3.jpg');
 }
 
 .vanguard-4 {
-  background-image: url('../img/vanguard-4.jpg');
+  background-image: url('../img/vanguard_4.jpg');
 }
 
 .futurism_1 {
-  background-image: url('../img/futurism-1.jpg');
+  background-image: url('../img/futurism_1.jpg');
 }
 
 .futurism_2 {
-  background-image: url('../img/futurism-2.jpg');
+  background-image: url('../img/futurism_2.jpg');
 }
 
 .futurism_3 {
-  background-image: url('../img/futurism-3.jpg');
+  background-image: url('../img/futurism_3.jpg');
 }
 
 .futurism_4 {
-  background-image: url('../img/futurism-4.jpg');
+  background-image: url('../img/futurism_4.jpg');
 }
 
+/* simplebar */
+.simplebar-track {
+  background-color: #000;
+}
+
+.simplebar-track.simplebar-vertical {
+  top: 40px;
+  right: 19px;
+  bottom: 40px;
+  width: 2px;
+  background-color: #000;
+}
+
+.simplebar-scrollbar::before {
+  border-radius: 0;
+  background-color: #fff;
+  transition: opacity .3s ease-in-out;
+}
+
+.simplebar-track.simplebar-vertical .simplebar-scrollbar::before {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.simplebar-scrollbar.simplebar-visible::before {
+  opacity: 1;
+  transition: opacity .3s ease-in-out;
+}
 
 /* select */
-.btn-reset {
-  padding: 0;
-  border: none;
-  font-family: inherit;
-  background-color: transparent;
-  cursor: pointer;
-}
 
 .choices {
   --select-filter-height: 40px;
@@ -484,7 +496,7 @@ a.subscriptions:active {
   margin-top: 0;
   width: 12px;
   height: 100%;
-  background-image: url('../../img/gallery/select-icon.svg');
+  background-image: url('../img/V_1.svg');
   background-repeat: no-repeat;
   background-position: center;
   transform: translateY(-50%);
@@ -577,7 +589,6 @@ a.subscriptions:active {
 .choices__list--dropdown .choices__item--selectable::after {
   display: none;
 }
-
 
 /* serch*/
 .btn-reset {
