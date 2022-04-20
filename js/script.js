@@ -16,7 +16,6 @@ $('.dropdown__btn').click(function () {
 });
 
 // gallery слайдер
-
 const gallerySlider = new Swiper('.gallery__swiper-container', {
   pagination: {
     el: '.gallery__pagination',
@@ -59,7 +58,7 @@ const gallerySlider = new Swiper('.gallery__swiper-container', {
       slidesPerView: 3,
       slidesPerGroup: 3,
       grid: {
-        rows: 2,
+        rows: 1,
       },
       spaceBetween: 50,
       speed: 600,
@@ -77,3 +76,28 @@ const galleryChoices = new Choices('.gallery__select', {
     containerOuter: 'choices gallery__choices',
   },
 });
+
+//tabs
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.step-link').forEach(function(steplink) {
+    steplink.addEventListener('click', function(event) {
+   
+      event.preventDefault ();
+      const path = event.currentTarget.dataset.path
+
+
+      document.querySelectorAll('.tab-content').forEach(function(tabContent) {
+        tabContent.classList.remove('active')
+      })
+      
+      document.querySelectorAll('.step-link').forEach(function(steplink) {
+        steplink.classList.remove('active')
+      })
+
+      document.querySelector(`[data-target="${path}"]`).classList.add('active')
+      event.currentTarget.classList.add('active')
+    })
+  })
+})
+
+

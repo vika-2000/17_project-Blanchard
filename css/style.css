@@ -3,8 +3,10 @@
   src: url("../fonts/OpenSans-Regular.woff2") format("woff2"),
     url("../fonts/OpenSans-Regular.woff") format("woff");
   font-weight: 400;
+  font-display: swap;
   font-style: normal;
 }
+
 @font-face {
   font-family: "Open Sans";
   font-style: italic;
@@ -574,7 +576,7 @@ a.subscriptions:active {
   border-color: var(--light-color);
 }
 
-/* 3 блок */
+/* three-section*/
 .three-section {
   margin-bottom: 80px;
 }
@@ -600,8 +602,7 @@ a.subscriptions:active {
 
 /*gallery*/
 .gallery {
-  width: 1920px;
-  height: 595px;
+  height: 560px;
   margin-bottom: 80px;
   padding: 85px 0 80px;
   background-position: center;
@@ -615,6 +616,11 @@ a.subscriptions:active {
   position: relative;
   display: flex;
   justify-content: space-between;
+}
+
+.gallery__slide-img {
+  width: 100%;
+  height: 100%;
 }
 
 .gallery__filter {
@@ -861,29 +867,348 @@ a.subscriptions:active {
   display: none;
 }
 
+/*checkbox*/
+.check_box {
+  height: 96px;
+  position: absolute; 
+  top: 300px;
+}
 
-/*  */
+.checkbox {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  font-style: normal;
+}
 
-.gallery__note {
+.text::before {
+  content: " ";
   position: absolute;
-  bottom: 0;
-  max-width: 20%;
-  margin-bottom: -10px;
-  font-weight: 600;
+  display: block;
+  left: 0;
+  top: 0;
+  width: 5px;
+  height: 5px;
+  background-size: cover;
+  border-radius: 50%;
+  background-color: #c283f3;
+  background-position: center;
+  opacity: 0;
+}
+
+.label {
+  font-weight: 400;
+  font-style: normal;
   font-size: 16px;
+  line-height: 32px;
+  position: relative;
+  cursor: pointer;
+  display: block;
+}
+
+.label:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.checkbox + .text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #fff;
+  margin-right: 9px;
+  text-align: center;
+}
+
+.checkbox + .text::before {
+  content: " ";
+  position: absolute;
+  opacity: 0;
+}
+
+.checkbox:checked + .text::before {
+  opacity: 1;
+}
+
+/* catolog-section*/
+
+.four-section {
+  margin-bottom: 80px;
+}
+
+.title-catalog {  
+  font-size: 48px;
+  line-height: 65px;
+  font-style: normal;
+  font-weight: 400;
+  color: #333; 
+  margin: 0;
+}
+
+.box {
+  display: flex;
+}
+
+.step-list:not(:last-child) {
+  margin-right: 89px;
+}
+
+.step-link {
+  color: #333;
+  font-size: 18px;
+  line-height: 22px;
+  font-style: normal;
+  font-weight: normal;
+  transition: border-color, 500ms;
+  cursor: pointer;
+}
+
+.step-link:hover {
+  color: #333;
+}
+
+.step-link:focus {
+  outline: 2px solid #333;
+}
+
+.text-catalog {
+  max-width: 1080px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px;
+  color: #333;
+  margin-bottom: 44px;
+  background-position: left;
+}
+
+/*accordione*/
+
+/* 3 блок */
+.sex-section {
+  width: 750px;
+}
+
+.title-question {
+  font-size: 24px;
+  line-height: 32px;
+  color: #333;
+  font-style: normal;
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+
+.menu-question {
+  list-style: none;
+}
+
+.list-question {
+  position: relative;
+  transition: all 0.7s;
+  margin-top: -1px;
+  border-top: 1px solid #cacaca;
+  border-bottom: 1px solid #cacaca;
+}
+
+.list-question:hover {
+  z-index: 1;
+  border-color: #7943A4;
+}
+
+.link-question {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 32px;
+  color: #333;
+  font-style: normal;
+  font-weight: bold;
+  background-color: #ececec;
+  transition: all 0.7s;
+  border: none;
+  padding-top: 41px;
+  padding-bottom: 41px;
+}
+
+.link-question:focus,
+.link-question:hover {
+  color:#D1A9F0;
+}
+
+.link-question::after {
+  content: " ";
+  background-repeat: no-repeat;
+  background-image: url("../img/gallery/select-icon.svg");
+  background-size: contain;
+  background-position: right;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50% 50%;
+  background-color: #333;
+  flex-shrink: 0;
+  margin-left: 100px;
+}
+
+.ui-accordion-header-active.link-question::after {
+  content: " ";
+  transform: rotate(360deg);
+  transition: all 500ms;
+}
+
+.link-question:hover::after {
+  content: " ";
+  background-image: url("../img/gallery/select-icon.svg");
+}
+
+.title-artist {
+  font-size: 24px;
+  line-height: 32px;
+  color: #333;
+  font-style: normal;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.texts {
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 400;
+  color: #333;
+}
+
+.gallery-link {
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 600;
+  color: #9d5cd0;
+}
+
+.cube {
+  position: relative;
+  margin-right: 24px;
+  padding: 12px;
+  width: 275px;
+  height: 189px;
+  border: 2px solid #b7b7b7;
+  background-color: transparent;
+}
+
+.cube span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #b7b7b7;
+}
+
+.cube-info {
+  position: absolute;
+  top: 108px;
+  left: 299px;
+  max-width: 275px;
+}
+
+
+
+
+
+
+/*
+.tabs__btn {
+  position: relative;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  background-color: transparent;
+  width: 46px;
+  height: 46px;
+  border: 2px solid transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: filter .3s ease-in-out, border-color .3s ease-in-out;
+}
+
+.tabs__btn:hover,
+.tabs__btn:focus-visible {
+  filter: drop-shadow(0px 0px 20px rgba(157, 92, 208, 0.7));
+}
+
+.tabs__btn:active {
+  border-color: var(--dark-color);
+}
+
+.tabs__btn::before {
+  content: "";
+  position: absolute;
+  top: -13px;
+  left: -13px;
+  width: calc(100% + 26px);
+  height: calc(100% + 26px);
+  border: 2px solid transparent;
+  border-radius: 50%;
+  transition: border-color .3s ease-in-out;
+}
+
+.tabs__btn.active::before {
+  border-color: var(--main-color);
+}
+
+.france {
+  background-image: url(../img/catalog/france.png);
+}
+
+.germany {
+  background-image: url(../img/catalog/de.png);
+}
+
+.italy {
+  background-image: url(../img/catalog/belg.png);
+}
+
+.russia {
+  background-image: url(../img/catalog/rus.png);
+}
+
+.belgium {
+  background-image: url(../img/catalog/italy.png);
+}
+
+.catalog__text {
+  margin-bottom: 39px;
+  max-width: 1080px;
+  font-weight: 400;
   line-height: 32px;
 }
 
-.gallery__link {
-  color: var(--light-color);
-  transition: color .3s ease-in-out, border-color .3s ease-in-out;
+.tab-content {
+  display: none;
+  opacity: 0;
 }
 
-.gallery__link:hover {
-  border-bottom: 1px solid var(--light-color);
+.tab-content-active {
+  display: block;
+  opacity: 1;
+  animation: fadeInFromNone .5s ease;
+}
+*/
+
+
+/*
+ this tabs
+*/
+
+.tab-content {
+  display: none;
+  opacity: 0;
 }
 
-.gallery__link:active {
-  color: var(--main-color);
-  border-bottom: 1px solid var(--main-color);
+.tab-content.active {
+  display: block;
+  opacity: 1;
+}
+
+.tabs {
+  display: flex;
 }
