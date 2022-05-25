@@ -77,27 +77,50 @@ const galleryChoices = new Choices('.gallery__select', {
   },
 });
 
-//tabs
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.step-link').forEach(function(steplink) {
-    steplink.addEventListener('click', function(event) {
-   
-      event.preventDefault ();
-      const path = event.currentTarget.dataset.path
+// TABS
 
+function slidesPlugin(activeSlide = 2) {
+  const slides = document.querySelectorAll('.tabs__btn');
 
-      document.querySelectorAll('.tab-content').forEach(function(tabContent) {
-        tabContent.classList.remove('active')
-      })
-      
-      document.querySelectorAll('.step-link').forEach(function(steplink) {
-        steplink.classList.remove('active')
-      })
+  slides[activeSlide].classList.add('active');
 
-      document.querySelector(`[data-target="${path}"]`).classList.add('active')
-      event.currentTarget.classList.add('active')
-    })
-  })
-})
+  for (const slide of slides) {
+    slide.addEventListener('click', () => {
+      clearActiveClasses();
+      slide.classList.add('active');
+    });
+  }
+
+  function clearActiveClasses() {
+    slides.forEach((slide) => {
+      slide.classList.remove('active');
+    });
+  }
+}
+
+slidesPlugin();
+
+document.querySelectorAll('.tabs__btn').forEach(function (tabsBtn) {
+  tabsBtn.addEventListener('click', function (event) {
+    const path = event.currentTarget.dataset.path;
+
+    document.querySelectorAll('.tab-content').forEach(function (tabContent) {
+      tabContent.classList.remove('tab-content-active');
+    });
+    document.querySelector(`[data-target="${path}"]`).classList.add('tab-content-active');
+  });
+});
+
+// ACCORDION
+
+$(".js-accordion").accordion({
+  collapsible: true,
+  active: 0,
+  icons: false,
+  heightStyle: 'content',
+  classes: {
+    "ui-accordion-header-active": "is-active",
+  }
+});
 
 
