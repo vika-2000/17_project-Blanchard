@@ -10,10 +10,12 @@ let heroSlider = new Swiper('.art__swiper' , {
 });
 
 // dropdown
+
 $('.dropdown__btn').click(function () {
   $(this).toggleClass('open');
   $('.dropdown__btn').not(this).removeClass('open');
 });
+
 
 // gallery слайдер
 const gallerySlider = new Swiper('.gallery__swiper-container', {
@@ -29,11 +31,11 @@ const gallerySlider = new Swiper('.gallery__swiper-container', {
     prevSlideMessage: 'Предыдущие слайды',
     nextSlideMessage: 'Следующие слайды',
   },
-  slidesPerView: 3,
+  slidesPerView: 1,
   grid: {
     rows: 2,
   },
-  slidesPerGroup: 3,
+  slidesPerGroup: 1,
   spaceBetween: 50,
   speed: 800,
   breakpoints: {
@@ -66,7 +68,6 @@ const gallerySlider = new Swiper('.gallery__swiper-container', {
   },
 });
 
-
 // gallery select
 const galleryChoices = new Choices('.gallery__select', {
   searchEnabled: false, //надо
@@ -77,42 +78,8 @@ const galleryChoices = new Choices('.gallery__select', {
   },
 });
 
-// TABS
-
-function slidesPlugin(activeSlide = 2) {
-  const slides = document.querySelectorAll('.tabs__btn');
-
-  slides[activeSlide].classList.add('active');
-
-  for (const slide of slides) {
-    slide.addEventListener('click', () => {
-      clearActiveClasses();
-      slide.classList.add('active');
-    });
-  }
-
-  function clearActiveClasses() {
-    slides.forEach((slide) => {
-      slide.classList.remove('active');
-    });
-  }
-}
-
-slidesPlugin();
-
-document.querySelectorAll('.tabs__btn').forEach(function (tabsBtn) {
-  tabsBtn.addEventListener('click', function (event) {
-    const path = event.currentTarget.dataset.path;
-
-    document.querySelectorAll('.tab-content').forEach(function (tabContent) {
-      tabContent.classList.remove('tab-content-active');
-    });
-    document.querySelector(`[data-target="${path}"]`).classList.add('tab-content-active');
-  });
-});
 
 // ACCORDION
-
 $(".js-accordion").accordion({
   collapsible: true,
   active: 0,
@@ -123,4 +90,182 @@ $(".js-accordion").accordion({
   }
 });
 
+/* Swiper-Events */
+new Swiper('.swiper-events', {
+  loop: false,
+  pagination: {
+    el: '.swiper-pagination-events',
+    type: 'bullets',
+    clickable: true
+  },
+  breakpoints: {
+    320: {
+      spaceBetween: 20,
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+    },
+    577: {
+      spaceBetween: 34,
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+    },
+    769: {
+      spaceBetween: 27,
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+    },
+    1025: {
+      spaceBetween: 50,
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    }
+  }
+});
+
+/* Section-Projects */
+// projects слайдер
+
+const projectsSwiper = new Swiper('.projects__swiper', {
+  navigation: {
+    nextEl: '.projects__swiper-next',
+    prevEl: '.projects__swiper-prev',
+  },
+  a11y: {
+    prevSlideMessage: 'Предыдущие слайды',
+    nextSlideMessage: 'Следующие слайды',
+  },
+
+  slidesPerView: 3,
+  slidesPerGroup: 3,
+  spaceBetween: 50,
+  speed: 800,
+
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      spaceBetween: 15,
+    },
+    577: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 34,
+    },
+    850: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 50,
+    },
+    1440: {
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+      spaceBetween: 50,
+    },
+  },
+});
+
+// tooltip
+// tooltip
+tippy('#tooltip-one', {
+  content: '<p style="max-height: 40px; text-align: center; font-size: 12px; font-weight: 600;">Пример современных тенденций - современная методология разработки </p>',
+  maxWidth: 264,
+  allowHTML: true,
+  arrow: true,
+  theme: 'tomato',
+  duration: 1500,
+});
+
+tippy('#tooltip-two', {
+  content: '<p style="min-height: 55px; text-align: center; font-size: 12px; font-weight: 600;">Приятно, граждане, наблюдать, как сделанные на базе аналитики выводы вызывают у вас эмоции  </p>',
+  maxWidth: 264,
+  allowHTML: true,
+  arrow: true,
+  theme: 'tomato',
+  duration: 1500,
+});
+
+tippy('#tooltip-three', {
+  content: '<p style="min-height: 25px; text-align: center; font-size: 12px; font-weight: 600;">В стремлении повысить качество </p>',
+  minWidth: 264,
+  allowHTML: true,
+  arrow: true,
+  theme: 'tomato',
+  duration: 1500,
+});
+
+//inputmask
+var selector = document.querySelector('input[type="phone"]');
+var im = new Inputmask('+7 (999)-999-99-99');
+var im = new Inputmask('+7 (999) 999-99-99');
+im.mask(selector);
+    
+//validate
+
+new JustValidate('.form', {
+  rules: {
+    name: {
+      required: true,
+      minLength: 2,
+      maxLength: 10
+    },
+    phone: {
+      required: true,
+    }
+  },
+  messages: {
+    name: {
+      required: 'Как вас зовут?',
+      minLength: 'Минимальная длинна 5 символов',
+    },
+    phone: {
+      required: 'Укажите ваш телефон', 
+    },
+    email: {
+      required: 'Укажите ваш E-mail', 
+    }
+  }
+});
+// MAP
+
+ymaps.ready(init);
+
+function init() {
+  var myMap = new ymaps.Map("map", {
+    center: [55.758468, 37.601088],
+    zoom: 14,
+    controls: ['geolocationControl', 'zoomControl']
+  }, {
+    suppressMapOpenBlock: true,
+    geolocationControlSize: "large",
+    geolocationControlPosition: { top: "200px", right: "20px" },
+    geolocationControlFloat: 'none',
+    zoomControlSize: "small",
+    zoomControlFloat: "none",
+    zoomControlPosition: { top: "120px", right: "20px" }
+  });
+
+  // Создание геообъекта с типом точка (метка).
+  var myGeoObject = new ymaps.GeoObject({
+    geometry: {
+      type: "Point", // тип геометрии - точка
+      coordinates: [55.758468, 37.601088] // координаты точки
+    }
+  });
+
+
+  var myPlacemark = new ymaps.Placemark([55.758468, 37.601088], {}, {
+    iconLayout: 'default#image',
+    iconImageHref:  'img/contacts/map-icon.svg',
+    iconImageSize: [20, 20],
+    iconImageOffset: [-10, -20]
+  });
+
+  // Размещение геообъекта на карте.
+  // myMap.geoObjects.add(myGeoObject);
+  myMap.geoObjects.add(myPlacemark);
+}
 
