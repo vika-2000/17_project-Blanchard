@@ -10,7 +10,6 @@ let heroSlider = new Swiper('.art__swiper' , {
 });
 
 // dropdown
-
 $('.dropdown__btn').click(function () {
   $(this).toggleClass('open');
   $('.dropdown__btn').not(this).removeClass('open');
@@ -68,7 +67,7 @@ const gallerySlider = new Swiper('.gallery__swiper-container', {
   },
 });
 
-// gallery select
+// gallery select choices
 const galleryChoices = new Choices('.gallery__select', {
   searchEnabled: false, //надо
   itemSelectText: null, //надо
@@ -77,7 +76,6 @@ const galleryChoices = new Choices('.gallery__select', {
     containerOuter: 'choices gallery__choices',
   },
 });
-
 
 // ACCORDION
 $(".js-accordion").accordion({
@@ -115,7 +113,7 @@ new Swiper('.swiper-events', {
       slidesPerGroup: 3,
     },
     1025: {
-      spaceBetween: 50,
+      spaceBetween: 20,
       slidesPerView: 3,
       slidesPerGroup: 3,
       navigation: {
@@ -168,7 +166,7 @@ const projectsSwiper = new Swiper('.projects__swiper', {
   },
 });
 
-// tooltip
+
 // tooltip
 tippy('#tooltip-one', {
   content: '<p style="max-height: 40px; text-align: center; font-size: 12px; font-weight: 600;">Пример современных тенденций - современная методология разработки </p>',
@@ -204,7 +202,6 @@ var im = new Inputmask('+7 (999) 999-99-99');
 im.mask(selector);
     
 //validate
-
 new JustValidate('.form', {
   rules: {
     name: {
@@ -229,8 +226,8 @@ new JustValidate('.form', {
     }
   }
 });
-// MAP
 
+// MAP
 ymaps.ready(init);
 
 function init() {
