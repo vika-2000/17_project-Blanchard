@@ -77,18 +77,37 @@ const galleryChoices = new Choices('.gallery__select', {
   },
 });
 
-// ACCORDION
-$(".js-accordion").accordion({
-  collapsible: true,
-  active: 0,
-  icons: false,
-  heightStyle: 'content',
-  classes: {
-    "ui-accordion-header-active": "is-active",
-  }
+ /* Catalog-country */
+ const btnPainter = document.querySelectorAll('.accordion-btn');
+
+ btnPainter.forEach(function (tabsBtn) {
+   tabsBtn.addEventListener('click', function (eventTab) {
+     const path = eventTab.currentTarget.dataset.path
+     document.querySelectorAll('.section-catalog__card').forEach(function (tabContent) {
+       tabContent.classList.remove('card-is-active')
+     })
+     document.querySelector(`[data-target="${path}"]`).classList.add('card-is-active')
+   })
+ })
+
+ btnPainter.forEach(function (activeBtn) {
+   activeBtn.addEventListener('click', function (clickBtn) {
+     btnPainter.forEach(function (eventBtn) {
+       eventBtn.classList.remove('btn-active')
+     })
+     clickBtn.target.classList.add('btn-active')
+   })
+ })
+
+/* Accordion */
+$(function () {
+  $("#accordion").accordion({
+    collapsible: true,
+    heightStyle: "content",
+  });
 });
 
-/* Swiper-Events */
+/* swiper-Events */
 new Swiper('.swiper-events', {
   loop: false,
   pagination: {
@@ -124,7 +143,7 @@ new Swiper('.swiper-events', {
   }
 });
 
-/* Section-Projects */
+
 // projects слайдер
 
 const projectsSwiper = new Swiper('.projects__swiper', {
@@ -165,7 +184,6 @@ const projectsSwiper = new Swiper('.projects__swiper', {
     },
   },
 });
-
 
 // tooltip
 tippy('#tooltip-one', {
@@ -227,22 +245,17 @@ new JustValidate('.form', {
   }
 });
 
-// MAP
+// map
 ymaps.ready(init);
 
 function init() {
   var myMap = new ymaps.Map("map", {
     center: [55.758468, 37.601088],
     zoom: 14,
-    controls: ['geolocationControl', 'zoomControl']
+    behaviors: ["drag", "dblClickZoom", "rightMouseButtonMagnifier", "multiTouch"]           
   }, {
-    suppressMapOpenBlock: true,
-    geolocationControlSize: "large",
-    geolocationControlPosition: { top: "200px", right: "20px" },
-    geolocationControlFloat: 'none',
-    zoomControlSize: "small",
-    zoomControlFloat: "none",
-    zoomControlPosition: { top: "120px", right: "20px" }
+   
+    
   });
 
   // Создание геообъекта с типом точка (метка).
@@ -252,11 +265,10 @@ function init() {
       coordinates: [55.758468, 37.601088] // координаты точки
     }
   });
-
-
+  
   var myPlacemark = new ymaps.Placemark([55.758468, 37.601088], {}, {
     iconLayout: 'default#image',
-    iconImageHref:  'img/contacts/map-icon.svg',
+    iconImageHref: 'img/contacts/map-icon.svg',
     iconImageSize: [20, 20],
     iconImageOffset: [-10, -20]
   });
